@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/mikemimik/aws-rds-snapshot-resource#readme",
   "dependencies": {
+    "aws-sdk": "^2.340.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
