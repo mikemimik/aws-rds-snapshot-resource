@@ -1,0 +1,41 @@
+{
+  "name": "aws-rds-snapshot-resource",
+  "version": "1.0.0",
+  "description": "An Concourse resource for managing AWS RDS snapshots.",
+  "scripts": {
+    "build": "docker build --tag mperrotte/${npm_package_name} .",
+    "tag:latest": "docker tag mperrotte/${npm_package_name} mperrotte/${npm_package_name}:latest",
+    "tag:version": "docker tag mperrotte/${npm_package_name}:latest mperrotte/${npm_package_name}:${npm_package_version}",
+    "tag": "npm run tag:latest && npm run tag:version",
+    "push:latest": "docker push mperrotte/${npm_package_name}:latest",
+    "push:version": "docker push mperrotte/${npm_package_name}:${npm_package_version}",
+    "push": "npm run push:latest && npm run push:version",
+    "deploy": "npm run build && npm run tag && npm run push",
+    "test": "echo \"no tests\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikemimik/aws-rds-snapshot-resource.git"
+  },
+  "keywords": [
+    "aws",
+    "rds",
+    "concourse",
+    "resource",
+    "pipeline",
+    "snapshot",
+    "backup"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikemimik/aws-rds-snapshot-resource/issues"
+  },
+  "homepage": "https://github.com/mikemimik/aws-rds-snapshot-resource#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "semistandard": "github:mikemimik/semistandard"
+  }
+}
